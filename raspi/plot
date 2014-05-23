@@ -1,0 +1,18 @@
+set term png size 1920, 1080
+set output 'graph.png'
+
+set title 'Weather Station'
+set ylabel 'Temp (C)'
+set xlabel 'Date'
+
+set xtics rotate by -45
+
+set grid
+
+set xdata time
+set timefmt "%s"
+set format x "%d/%m"
+
+set datafile separator ","
+
+plot 'data.txt' using 2:1 with linespoints
